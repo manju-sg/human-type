@@ -23,10 +23,20 @@ An intelligent code typing simulator designed to type code keystroke-by-keystrok
 
 ## 🚀 Quick Start
 
-### Option 1: Double-Click Launcher (Windows)
+### 1. Installation
+Clone repository and install requirements:
+```bash
+git clone https://github.com/manju-sg/human-type.git
+cd human-type
+pip install -r requirements.txt
+```
+
+### 2. Launching
+
+#### Option 1: Double-Click Launcher (Windows)
 Double-click `run_human_typer.bat` in the project root.
 
-### Option 2: Run with Python
+#### Option 2: Run with Python
 ```bash
 python run_typer.py
 ```
@@ -35,20 +45,20 @@ or
 python -m human_typer.gui
 ```
 
-### Option 3: Command Line (CLI)
+#### Option 3: Command Line (CLI)
 Type directly from your clipboard or a file:
 ```bash
 # Type whatever is in your clipboard at 80 WPM with a 5s countdown:
 python -m human_typer.cli --clipboard --wpm 80
 
 # Type a Python file using the "Senior Engineer" profile:
-python -m human_typer.cli --file solution.py --preset "Senior Engineer"
+python -m human_typer.cli --file solution.py --preset "Senior Engineer (Fast & Clean)"
 
 # Type with custom typo rate and countdown:
 python -m human_typer.cli --file script.js --wpm 90 --typos 2.0 --countdown 8
 ```
 
-### Option 4: Visual Web Simulator (Browser)
+#### Option 4: Visual Web Simulator (Browser)
 Open `human_typer/web_simulator/index.html` in Chrome or Edge to enjoy the web simulator with mechanical keyboard audio synthesis and live telemetry.
 
 ---
@@ -78,13 +88,17 @@ Open `human_typer/web_simulator/index.html` in Chrome or Edge to enjoy the web s
 ## 📁 Project Structure
 
 ```
-human_typer/
-├── __init__.py           # Package exports
-├── engine.py             # Human typing simulation engine & QWERTY model
-├── gui.py                # Modern CustomTkinter dark-mode desktop app
-├── cli.py                # Command-line interface
-├── web_simulator/        # Interactive HTML5/JS simulator with mechanical sound
-│   └── index.html
-run_typer.py              # Root launcher script
-run_human_typer.bat       # Windows 1-click batch launcher
+human-type/
+├── human_typer/
+│   ├── __init__.py           # Package exports
+│   ├── engine.py             # Human typing simulation engine & QWERTY model
+│   ├── gui.py                # Modern CustomTkinter dark-mode desktop app
+│   ├── cli.py                # Command-line interface
+│   ├── README.md             # Package documentation
+│   └── web_simulator/        # Interactive HTML5/JS simulator with mechanical sound
+│       └── index.html
+├── run_typer.py              # Root launcher script
+├── run_human_typer.bat       # Windows 1-click batch launcher
+├── requirements.txt          # Dependencies (customtkinter, pynput, pyperclip)
+└── README.md                 # Project README
 ```
